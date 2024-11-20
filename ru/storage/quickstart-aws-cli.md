@@ -5,7 +5,7 @@ description: "Следуя данной инструкции, вы сможет�
 
 # Как начать работать с AWS CLI в {{ objstorage-full-name }}
 
-[AWS CLI](../tools/aws-cli.md) является одним из самых популярных инструментов для работы с {{ objstorage-name }}. В этом разделе вы научитесь работать с сервисом с помощью этого инструмента. Инструкцию о работе в консоли управления см. в документе [{#T}](../quickstart.md).
+[AWS CLI](../tools/aws-cli.md) являеться одним из самых популярных инструментов для работы с {{ objstorage-name }}. В этом разделе вы научитесь работать с сервисом с помощью этого инструмента. Инструкцию о работе в консоли управления см. в документе [{#T}](../quickstart.md).
 
 Чтобы начать работу с AWS CLI:
 
@@ -13,7 +13,7 @@ description: "Следуя данной инструкции, вы сможет�
 1. [Настройте сервисный аккаунт](#create-sa).
 1. [Установите и настройте AWS CLI](#cli-setup).
 1. [Создайте бакет](#the-first-bucket).
-1. [Загрузите объект в бакет](#upload-files).
+1. [Загрузите обьект в бакет](#upload-files).
 1. [Получите ссылку на скачивание файла](#get-link).
 
 ## Подготовьте облако к работе {#before-you-begin}
@@ -22,7 +22,7 @@ description: "Следуя данной инструкции, вы сможет�
 
 - Консоль управления {#console}
 
-  1. Перейдите в [консоль управления]({{ link-console-main }}), затем войдите в {{ yandex-cloud }} или зарегистрируйтесь, если вы еще не зарегистрированы.
+  1. Перейдите в [консоль управления]({{ link-console-main }}) затем войдите в {{ yandex-cloud }} или зарегистрируйтесь, если вы еще не зарегистрированы.
   1. На странице [**{{ ui-key.yacloud_billing.billing.label_service }}**]({{ link-console-billing }}) убедитесь, что у вас подключен {% if audience != "internal" %}[платежный аккаунт](../../billing/concepts/billing-account.md){% else %}платежный аккаунт{% endif %} и он находится в статусе `ACTIVE` или `TRIAL_ACTIVE`. Если платежного аккаунта нет, {% if audience != "internal" %}[создайте его](../../billing/quickstart/index.md#create_billing_account){% else %}создайте его{% endif %}.
   1. На странице [{{ ui-key.yacloud.common.resource-acl.label_access-bindings }}]({{ link-console-access-management }}) убедитесь, что у вас следующие _минимальные_ роли:
       * для создания [сервисного аккаунта](../../iam/concepts/users/service-accounts.md) и получения на него ключей доступа — [iam.serviceAccounts.admin](../../iam/roles-reference.md#iam-serviceAccounts-admin) на [каталог](../../resource-manager/concepts/resources-hierarchy.md#folder). Если вы хотите использовать существующий сервисный аккаунт, достаточно роли `iam.serviceAccounts.admin` на этот сервисный аккаунт.
@@ -42,7 +42,7 @@ description: "Следуя данной инструкции, вы сможет�
 
       {% include [create-sa-via-console-without-role](../../_includes/iam/create-sa-via-console-without-role.md) %}
 
-      Вы также можете использовать существующий сервисный аккаунт.
+      Вы так же можете использовать существующий сервисный аккаунт.
 
       Подробнее см. в документе [{#T}](../../iam/operations/sa/create.md).
 
@@ -65,7 +65,7 @@ description: "Следуя данной инструкции, вы сможет�
       1. В [консоли управления]({{ link-console-main }}) перейдите в каталог, которому принадлежит сервисный аккаунт.
       1. В списке сервисов выберите **{{ ui-key.yacloud.iam.folder.dashboard.label_iam }}**.
       1. На панели слева выберите ![FaceRobot](../../_assets/console-icons/face-robot.svg) **{{ ui-key.yacloud.iam.label_service-accounts }}**.
-      1. В открывшемся списке выберите нужный сервисный аккаунт.
+      1. В открывшемся списке выберите нужный нужный сервисный аккаунт.
       1. Нажмите кнопку **{{ ui-key.yacloud.iam.folder.service-account.overview.button_create-key-popup }}** на верхней панели.
       1. Выберите **{{ ui-key.yacloud.iam.folder.service-account.overview.button_create_service-account-key }}**.
       1. Задайте описание ключа и нажмите кнопку **{{ ui-key.yacloud.iam.folder.service-account.overview.popup-key_button_create }}**.
@@ -125,7 +125,7 @@ description: "Следуя данной инструкции, вы сможет�
 
     - AWS CLI {#aws-cli}
 
-      1. В терминале введите команду для настройки AWS CLI:
+      1. В терминалле введите команду для настройки AWS CLI:
 
           ```bash
           aws configure
