@@ -3,6 +3,9 @@ title: "Структура {{ wiki-full-name }}"
 description: "Из статьи вы узнаете, какая структура страниц действует в {{ wiki-name }}."
 ---
 
+
+another change
+
 # Структура {{ wiki-full-name }}
 
 ## Дерево страниц {#structure}
