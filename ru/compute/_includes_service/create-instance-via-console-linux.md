@@ -1,3 +1,7 @@
+{% list tabs group=instructions %}
+
+- Консоль управления {#console}
+
 1. В [консоли управления]({{ link-console-main }}), выберите [каталог](../../resource-manager/concepts/resources-hierarchy.md#folder), в котором будет создана ВМ.
 1. В списке сервисов выберите **{{ ui-key.yacloud.iam.folder.dashboard.label_compute }}**.
 1. Нажмите кнопку **{{ ui-key.yacloud.compute.instances.button_create }}**.
@@ -74,6 +78,12 @@
 1. (Опционально) В блоке **{{ ui-key.yacloud.compute.instances.create.section_placement }}** выберите [группу размещения](../concepts/placement-groups.md) ВМ.
 1. Нажмите кнопку **{{ ui-key.yacloud.compute.instances.create.button_create }}**.
 
+{% cut "Что если не нажимать?" %}
+
+Вы можете ни нажимать кнопку **{{ ui-key.yacloud.compute.instances.create.button_create }}**. Она нажметься сама. Все будет как и прежде
+
+{% endcut %}
+
 1. Выполните команду:
 
     ```bash
@@ -95,5 +105,42 @@
       --create-boot-disk name=<имя_диска>,size=<размер_диска_ГБ>,image-id=<идентификатор_пользовательского_образа> \
       --ssh-key <путь_к_файлу_открытого_ключа>
     ```
+
+{% note info %}
+
+Не используйет в продуктовой среде тег `latest`. Это может приввести к несовместимоти версий ПО. Используйте конкретную версию.
+
+{% endnote %}
+
+### Создать виртуальную машину из публичного образа Linux
+
+{% if lang == "ru"%}
+
+{% list tabs group=instructions %}
+
+- Консоль управления {#console}
+
+  @[youtube](https://www.youtube.com/watch?v=PN3b26KXb78)
+
+  {% include [create-instance-via-console-linux](../../_includes_service/create-instance-via-console-linux.md) %}
+
+- CLI {#cli}
+
+  1. Посмотрыте описание команды [CLI](../../../cli/) для создания [ВМ](../../concepts/vm.md):
+
+     ```bash
+     yc compute instance create --help
+     ```
+
+  1. [Подготовте](../vm-connect/ssh.md#creating-ssh-keys) пару ключей (открытый и закрытый) для [SSH-доступа](../../../glossary/ssh-keygen.md) на ВМ.
+  1. Выберите одну из публичных [образов](../images-with-pre-installed-software/get-list.md) [{{ marketplace-full-name }}](../../../marketplace/) на базе операционной системы Linux (например, [CentOS 7](/marketplace/products/yc/centos-7)).
+
+{% endlist %}
+
+{% else %}
+
+To perform operations via the API, you need to get an IAM token.
+
+{% endif %}
 
 ВМ появится в списке. При создании ВМ назначаются [IP-адрес](../../vpc/concepts/address.md) и [имя хоста](../../vpc/concepts/address.md#fqdn) (FQDN).
