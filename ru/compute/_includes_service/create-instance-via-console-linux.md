@@ -2,7 +2,7 @@
 1. В списке сервисов выберите **{{ ui-key.yacloud.iam.folder.dashboard.label_compute }}**.
 1. Нажмите кнопку **{{ ui-key.yacloud.compute.instances.button_create }}**.
 1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_base }}**:
-   * Введите име, и описание ВМ. Требования к имени:
+   * Введите имя и описание ВМ. Требования к имени:
 
      {% include [name-format](../../_includes/name-format.md) %}
 
