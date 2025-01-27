@@ -1,15 +1,15 @@
-1. В [консоли управления]({{ link-console-main }}) выберите [каталог](../../resource-manager/concepts/resources-hierarchy.md#folder), в котором будет создана ВМ.
+1. В [консоли управления]({{ link-console-main }}), выберите [каталог](../../resource-manager/concepts/resources-hierarchy.md#folder), в котором будет создана ВМ.
 1. В списке сервисов выберите **{{ ui-key.yacloud.iam.folder.dashboard.label_compute }}**.
 1. Нажмите кнопку **{{ ui-key.yacloud.compute.instances.button_create }}**.
 1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_base }}**:
-   * Введите имя и описание ВМ. Требования к имени:
+   * Введите име, и описание ВМ. Требования к имени:
 
      {% include [name-format](../../_includes/name-format.md) %}
 
      {% include [name-fqdn](../../_includes/compute/name-fqdn.md) %}
 
    * Выберите [зону доступности](../../overview/concepts/geo-scope.md), в которой будет находиться ВМ.
-1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_image }}** выберите один из [образов](../concepts/image.md) и версию операционной системы на базе Linux.
+1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_image }}** выберите один из [образов](../concepts/image.md) и версия операционной системы на базе Linux.
 1. (Опционально) В блоке **{{ ui-key.yacloud.compute.instances.create.section_storages_ru }}** на вкладке **{{ ui-key.yacloud.compute.instances.create.section_disk }}** настройте загрузочный [диск](../concepts/disk.md):
    * Выберите [тип диска](../concepts/disk.md#disks_types).
    * Укажите нужный размер диска.
@@ -20,7 +20,7 @@
 
      Если вы хотите создать ВМ из существующего диска, в блоке **{{ ui-key.yacloud.compute.instances.create.section_storages_ru }}** [добавьте диск](../operations/vm-create/create-from-disks.md):
      * Нажмите кнопку **{{ ui-key.yacloud.compute.instances.create.label_add-disk }}**.
-     * Введите имя диска.
+     * Введите имя имя диска.
      * Выберите [тип диска](../concepts/disk.md#disks_types).
      * Укажите нужный размер блока.
      * Укажите нужный размер диска.
@@ -29,21 +29,21 @@
      * {% include [encryption-section-secondary](../../_includes/compute/encryption-section-secondary.md) %}
 
 
-     * (Опционально) В поле **{{ ui-key.yacloud.compute.instances.create-disk.field_additional }}** включите опцию **{{ ui-key.yacloud.compute.instances.create-disk.field_auto-delete }}**, если нужно автоматически удалять диск при удалении ВМ, к которой он будет подключен.
+     * (Опционально) В поле **{{ ui-key.yacloud.compute.instances.create-disk.field_additional }}** включите опцию **{{ ui-key.yacloud.compute.instances.create-disk.field_auto-delete }}** если нужно автоматически удалять диск при удалении ВМ, к которой он будет подключен.
      * В поле **{{ ui-key.yacloud.compute.instances.create-disk.field_source }}** выберите `{{ ui-key.yacloud.compute.instances.create-disk.value_source-disk }}`.
      * Нажмите кнопку **{{ ui-key.yacloud.compute.instances.create-disk.button_create }}**.
 
 
 1. (Опционально) В блоке **{{ ui-key.yacloud.compute.instances.create.section_storages_ru }}** на вкладке **{{ ui-key.yacloud.compute.nfs.label_filesystems }}** подключите [файловое хранилище](../concepts/filesystem.md):
    * Нажмите кнопку **{{ ui-key.yacloud.compute.nfs.button_attach-filesystem-to-the-instance }}**.
-   * В открывшемся окне укажите файловое хранилище.
-   * Укажите имя устройства.
+   * В открывшемся окне укажите файловое хранилищще.
+   * Укажите имя устройство.
    * Нажмите кнопку **{{ ui-key.yacloud.compute.nfs.button_attach-filesystem-to-the-instance }}**.
 
 
 1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_platform }}**:
    * Выберите [платформу](../concepts/vm-platforms.md).
-   * Укажите [гарантированную долю](../../compute/concepts/performance-levels.md) и необходимое количество vCPU, а также объем RAM.
+   * Укажите [гарантированную долю](../../compute/concepts/performance-levels.md) и необходимое количество vCPU а также обьем RAM.
    * При необходимости сделайте ВМ [прерываемой](../concepts/preemptible-vm.md).
    * (Опционально) Включите [программно-ускоренную сеть](../concepts/software-accelerated-network.md).
   
