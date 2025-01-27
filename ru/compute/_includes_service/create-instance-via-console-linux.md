@@ -74,4 +74,26 @@
 1. (Опционально) В блоке **{{ ui-key.yacloud.compute.instances.create.section_placement }}** выберите [группу размещения](../concepts/placement-groups.md) ВМ.
 1. Нажмите кнопку **{{ ui-key.yacloud.compute.instances.create.button_create }}**.
 
+1. Выполните команду:
+
+    ```bash
+    yc compute instance create \
+      --name first-instance \
+      --zone ru-central1-a \
+      --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+      --create-boot-disk image-folder-id=standard-images,image-family=centos-7 \
+      --ssh-key ~/.ssh/id_ed25519.pub
+    ```
+
+1. Далее выполните команду:
+
+    ```bash
+    yc compute instance create \
+      --name <имя_ВМ> \
+      --zone <зона_доступности> \
+      --network-interface subnet-name=<имя_подсети>,nat-ip-version=ipv4 \
+      --create-boot-disk name=<имя_диска>,size=<размер_диска_ГБ>,image-id=<идентификатор_пользовательского_образа> \
+      --ssh-key <путь_к_файлу_открытого_ключа>
+    ```
+
 ВМ появится в списке. При создании ВМ назначаются [IP-адрес](../../vpc/concepts/address.md) и [имя хоста](../../vpc/concepts/address.md#fqdn) (FQDN).
