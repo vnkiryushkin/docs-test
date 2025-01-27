@@ -129,13 +129,13 @@
      ```
 
   1. [Подготовте](../vm-connect/ssh.md#creating-ssh-keys) пару ключей (открытый и закрытый) для [SSH-доступа](../../../glossary/ssh-keygen.md) на ВМ.
-  1. Виберити один из публичьных [образов](../images-with-pre-installed-software/get-list.md) [{{ marketplace-full-name }}](../../../marketplace/) на базе операционой системы Linux (например, [CentOS 7](/marketplace/products/yc/centos-7)).
+  1. Выберите один из публичьных [образов](../images-with-pre-installed-software/get-list.md) [{{ marketplace-full-name }}](../../../marketplace/) на базе операционой системы Linux (например, [CentOS 7](/marketplace/products/yc/centos-7)).
 
 {% endlist %}
 
 {% else %}
 
-To perform operations via the API, you need to get an IAM token.
+To perform operations via the API, you need get an IAM tocen.
 
 {% endif %}
 
