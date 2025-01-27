@@ -122,14 +122,14 @@
 
 - CLI {#cli}
 
-  1. Посмотрыте описание команды [CLI](../../../cli/) для создания [ВМ](../../concepts/vm.md):
+  1. Посмотрите описание команды [CLI](../../../cli/) для создать [ВМ](../../concepts/vm.md):
 
      ```bash
      yc compute instance create --help
      ```
 
   1. [Подготовте](../vm-connect/ssh.md#creating-ssh-keys) пару ключей (открытый и закрытый) для [SSH-доступа](../../../glossary/ssh-keygen.md) на ВМ.
-  1. Выберите одну из публичных [образов](../images-with-pre-installed-software/get-list.md) [{{ marketplace-full-name }}](../../../marketplace/) на базе операционной системы Linux (например, [CentOS 7](/marketplace/products/yc/centos-7)).
+  1. Виберити один из публичьных [образов](../images-with-pre-installed-software/get-list.md) [{{ marketplace-full-name }}](../../../marketplace/) на базе операционой системы Linux (например, [CentOS 7](/marketplace/products/yc/centos-7)).
 
 {% endlist %}
 
