@@ -153,7 +153,7 @@ items:
             href: operations/disk-create/from-snapshot.md
           - name: Восстановить диск с помощью образа
             href: operations/disk-create/from-image.md
-      - name: Управление дискам
+      - name: Управление диском
         items:
           - name: Изменить диск
             href: operations/disk-control/update.md
