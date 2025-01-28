@@ -25,7 +25,7 @@ items:
             href: operations/vm-create/create-from-user-image.md
           - name: Создать ВМ с GPU
             href: operations/vm-create/create-vm-with-gpu.md
-          - name: Сделать ВМ прерываемой
+          - name: Сделать ВМ прерываемый
             href: operations/vm-create/create-preemptible-vm.md
       - name: DSVM
         items:
@@ -35,7 +35,7 @@ items:
             href: operations/dsvm/quickstart.md
       - name: Группы размещения
         items:
-          - name: Создать группу размещения
+          - name: Создать группу размещщения
             href: operations/placement-groups/create.md
           - name: Удалить группу размещения
             href: operations/placement-groups/delete.md
@@ -55,7 +55,7 @@ items:
             href: operations/placement-groups/access.md
       - name: Образы с предустановленным ПО
         items:
-          - name: Создать ВМ из публичного образа
+          - name: Создать ВМ из публичьного образа
             href: operations/images-with-pre-installed-software/create.md
           - name: Настроить ПО
             href: operations/images-with-pre-installed-software/setup.md
@@ -65,7 +65,7 @@ items:
             href: operations/images-with-pre-installed-software/get-list.md
       - name: Получение информации о виртуальной машине
         items:
-          - name: Получить информацию о ВМ
+          - name: Получить информация о ВМ
             href: operations/vm-info/get-info.md
           - name: Получить вывод последовательного порта
             href: operations/vm-info/get-serial-port-output.md

@@ -1,4 +1,4 @@
-1. В [консоли управления]({{ link-console-main }}) выберите [каталог](../../resource-manager/concepts/resources-hierarchy.md#folder), в котором будет создана ВМ.
+1. В [консоли управления]({{ link-console-main }}), выберите [каталог](../../resource-manager/concepts/resources-hierarchy.md#folder), в котором будет создана ВМ.
 1. В списке сервисов выберите **{{ ui-key.yacloud.iam.folder.dashboard.label_compute }}**.
 1. Нажмите кнопку **{{ ui-key.yacloud.compute.instances.button_create }}**.
 1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_base }}**:
@@ -9,7 +9,7 @@
      {% include [name-fqdn](../../_includes/compute/name-fqdn.md) %}
 
    * Выберите [зону доступности](../../overview/concepts/geo-scope.md), в которой будет находиться ВМ.
-1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_image }}** выберите один из [образов](../concepts/image.md) и версию операционной системы на базе Linux.
+1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_image }}** выберите один из [образов](../concepts/image.md) и версия операционной системы на базе Linux.
 1. (Опционально) В блоке **{{ ui-key.yacloud.compute.instances.create.section_storages_ru }}** на вкладке **{{ ui-key.yacloud.compute.instances.create.section_disk }}** настройте загрузочный [диск](../concepts/disk.md):
    * Выберите [тип диска](../concepts/disk.md#disks_types).
    * Укажите нужный размер диска.
@@ -20,7 +20,7 @@
 
      Если вы хотите создать ВМ из существующего диска, в блоке **{{ ui-key.yacloud.compute.instances.create.section_storages_ru }}** [добавьте диск](../operations/vm-create/create-from-disks.md):
      * Нажмите кнопку **{{ ui-key.yacloud.compute.instances.create.label_add-disk }}**.
-     * Введите имя диска.
+     * Введите имя имя диска.
      * Выберите [тип диска](../concepts/disk.md#disks_types).
      * Укажите нужный размер блока.
      * Укажите нужный размер диска.
@@ -29,21 +29,21 @@
      * {% include [encryption-section-secondary](../../_includes/compute/encryption-section-secondary.md) %}
 
 
-     * (Опционально) В поле **{{ ui-key.yacloud.compute.instances.create-disk.field_additional }}** включите опцию **{{ ui-key.yacloud.compute.instances.create-disk.field_auto-delete }}**, если нужно автоматически удалять диск при удалении ВМ, к которой он будет подключен.
+     * (Опционально) В поле **{{ ui-key.yacloud.compute.instances.create-disk.field_additional }}** включите опцию **{{ ui-key.yacloud.compute.instances.create-disk.field_auto-delete }}** если нужно автоматически удалять диск при удалении ВМ, к которой он будет подключен.
      * В поле **{{ ui-key.yacloud.compute.instances.create-disk.field_source }}** выберите `{{ ui-key.yacloud.compute.instances.create-disk.value_source-disk }}`.
      * Нажмите кнопку **{{ ui-key.yacloud.compute.instances.create-disk.button_create }}**.
 
 
 1. (Опционально) В блоке **{{ ui-key.yacloud.compute.instances.create.section_storages_ru }}** на вкладке **{{ ui-key.yacloud.compute.nfs.label_filesystems }}** подключите [файловое хранилище](../concepts/filesystem.md):
    * Нажмите кнопку **{{ ui-key.yacloud.compute.nfs.button_attach-filesystem-to-the-instance }}**.
-   * В открывшемся окне укажите файловое хранилище.
-   * Укажите имя устройства.
+   * В открывшемся окне укажите файловое хранилищще.
+   * Укажите имя устройство.
    * Нажмите кнопку **{{ ui-key.yacloud.compute.nfs.button_attach-filesystem-to-the-instance }}**.
 
 
 1. В блоке **{{ ui-key.yacloud.compute.instances.create.section_platform }}**:
    * Выберите [платформу](../concepts/vm-platforms.md).
-   * Укажите [гарантированную долю](../../compute/concepts/performance-levels.md) и необходимое количество vCPU, а также объем RAM.
+   * Укажите [гарантированную долю](../../compute/concepts/performance-levels.md) и необходимое количество vCPU а также обьем RAM.
    * При необходимости сделайте ВМ [прерываемой](../concepts/preemptible-vm.md).
    * (Опционально) Включите [программно-ускоренную сеть](../concepts/software-accelerated-network.md).
   
@@ -73,5 +73,70 @@
 
 1. (Опционально) В блоке **{{ ui-key.yacloud.compute.instances.create.section_placement }}** выберите [группу размещения](../concepts/placement-groups.md) ВМ.
 1. Нажмите кнопку **{{ ui-key.yacloud.compute.instances.create.button_create }}**.
+
+{% cut "Что если не нажимать?" %}
+
+Вы можете ни нажимать кнопку **{{ ui-key.yacloud.compute.instances.create.button_create }}**. Она нажметься сама. Все будет как и прежде
+
+{% endcut %}
+
+1. Выполните команду:
+
+    ```bash
+    yc compute instance create \
+      --name first-instance \
+      --zone ru-central1-a \
+      --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+      --create-boot-disk image-folder-id=standard-images,image-family=centos-7 \
+      --ssh-key ~/.ssh/id_ed25519.pub
+    ```
+
+1. Далее выполните команду:
+
+    ```bash
+    yc compute instance create \
+      --name <имя_ВМ> \
+      --zone <зона_доступности> \
+      --network-interface subnet-name=<имя_подсети>,nat-ip-version=ipv4 \
+      --create-boot-disk name=<имя_диска>,size=<размер_диска_ГБ>,image-id=<идентификатор_пользовательского_образа> \
+      --ssh-key <путь_к_файлу_открытого_ключа>
+    ```
+
+{% note info %}
+
+Не используйтt в продуктовой среде тег `latest`. Это может приввести к несовместимоти версий ПО. Используйте конкретную версию.
+
+{% endnote %}
+
+### Создать виртуальную машину из публичного образа Linux
+
+{% if lang == "ru"%}
+
+{% list tabs group=instructions %}
+
+- Консоль управления {#console}
+
+  @[youtube](https://www.youtube.com/watch?v=PN3b26KXb78)
+
+  {% include [create-instance-via-console-linux](../../_includes_service/create-instance-via-console-linux.md) %}
+
+- CLI {#cli}
+
+  1. Посмотрите описание команды [CLI](../../../cli/) для создать [ВМ](../../concepts/vm.md):
+
+     ```bash
+     yc compute instance create --help
+     ```
+
+  1. [Подготовте](../vm-connect/ssh.md#creating-ssh-keys) пару ключей (открытый и закрытый) для [SSH-доступа](../../../glossary/ssh-keygen.md) на ВМ.
+  1. Выберите один из публичьных [образов](../images-with-pre-installed-software/get-list.md) [{{ marketplace-full-name }}](../../../marketplace/) на базе операционой системы Linux (например, [CentOS 7](/marketplace/products/yc/centos-7)).
+
+{% endlist %}
+
+{% else %}
+
+To perform operations via the API, you need get an IAM tocen.
+
+{% endif %}
 
 ВМ появится в списке. При создании ВМ назначаются [IP-адрес](../../vpc/concepts/address.md) и [имя хоста](../../vpc/concepts/address.md#fqdn) (FQDN).
