@@ -1,0 +1,22 @@
+title:
+  - text: Yandex Cloud SDK
+description:
+  - text:
+    - >-
+      Yandex Cloud SDK — это комплект средств разработки для взаимодействия с облачной инфраструктурой.
+    - >-
+      SDK поддерживают работу с большинством сервисов Yandex Cloud и доступны для следующих языков программирования и фреймворков: <a href="https://github.com/yandex-cloud/nodejs-sdk">Node.js</a>, <a href="https://github.com/yandex-cloud/go-sdk">Go</a>, <a href="https://github.com/yandex-cloud/python-sdk">Python</a>, <a href="https://github.com/yandex-cloud/java-sdk">Java</a> и <a href="https://github.com/yandex-cloud/dotnet-sdk">.NET</a>.
+    - >-
+      Также доступны специальные SDK для сервисов <a href="https://github.com/yandex-cloud/yandex-cloud-ml-sdk">Yandex Foundation Models</a>, <a href="https://pypi.org/project/yandex-speechkit/">Yandex SpeechKit</a>, <a href="/docs/video/sdk/">Yandex Cloud Video</a> и <a href="https://ydb.tech/docs/ru/reference/ydb-sdk/">Yandex Managed Service for YDB</a>.
+meta:
+  title:
+    - text: Yandex Cloud SDK
+  description:
+    - text: "Yandex Cloud SDK — это комплект средств разработки для взаимодействия с облачными сервисами."
+links:
+  - title: Обзор
+    description: Узнайте про SDK, которые применяются для работы с Yandex Cloud
+    href: overview
+  - title: Начало работы
+    description: Создайте с помощью SDK виртуальную машину Yandex Compute Cloud
+    href: quickstart
