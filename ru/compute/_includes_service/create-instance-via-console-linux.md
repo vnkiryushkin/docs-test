@@ -135,7 +135,7 @@
 
 {% else %}
 
-To perform operations via the API, you need get an IAM tocen.
+To perform operations via the API, you need to get an IAM tocen.
 
 {% endif %}
 
